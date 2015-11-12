@@ -7,7 +7,7 @@ public class Rotation : MonoBehaviour {
 	public bool right;
 	public bool left;
 	public bool horizontalMove;
-	public float moveSpeed = 50f;
+	public float moveSpeed = 1f;
 	public float rotationSpeed = 50f;
 
 	void OnCollisionEnter2D(Collision2D collider){

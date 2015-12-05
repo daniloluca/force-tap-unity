@@ -3713,6 +3713,7 @@ GameObject:
   - 50: {fileID: 1842902512}
   - 114: {fileID: 1842902513}
   - 96: {fileID: 1842902514}
+  - 114: {fileID: 1842902515}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -3857,6 +3858,19 @@ TrailRenderer:
       rgba: 0
   m_MinVertexDistance: .100000001
   m_Autodestruct: 0
+--- !u!114 &1842902515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1842902508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d38808037fdff43428c0fa777d0981bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trail: {fileID: 162840, guid: 95e1ef3db185642df9718dec8f624292, type: 2}
+  speed: .0500000007
 --- !u!1 &1910774860
 GameObject:
   m_ObjectHideFlags: 0

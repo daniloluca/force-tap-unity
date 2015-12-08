@@ -3,34 +3,28 @@ using System.Collections;
 
 public class TrailTransparency : MonoBehaviour {
 
-	public float speed = 1f;
+	public float speed = 0.4f;
 	private Color color;
 
 	// Use this for initialization
 	void Start () {
-		StartCoroutine("deadDelay");
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		if(transform.GetComponent<SpriteRenderer>().color.a <= 0){
+		if(this.transform.GetComponent<SpriteRenderer>().color.a <= 0){
 			DestroyObject(gameObject);
 		}
 
-		color = transform.GetComponent<SpriteRenderer>().color;
+		color = this.transform.GetComponent<SpriteRenderer>().color;
 
 		color.a-=Time.deltaTime/speed;
 
-		transform.GetComponent<SpriteRenderer>().color = color;
+		this.transform.GetComponent<SpriteRenderer>().color = color;	
+
+		//scale
 			
-	}
-
-	IEnumerator deadDelay(){
-
-		
-
-		yield return new WaitForSeconds(speed);
-		StartCoroutine("deadDelay");
 	}
 }

@@ -12,6 +12,9 @@ public class BallController : MonoBehaviour {
 	private int colorIndex = 0;
 	private GameObject instance;
 	private Vector4[] colorList = new Vector4[3];
+	public AudioClip splashSound;
+	public AudioClip bounceSound;
+	public AudioClip endSound;
 
 	void OnCollisionEnter2D(Collision2D collider){
 		if(collider.gameObject.tag == "Block"){
@@ -34,7 +37,10 @@ public class BallController : MonoBehaviour {
 			instance.transform.parent = collider.gameObject.transform;
 			hit();
 		}else if(collider.gameObject.tag == "End"){
+			this.transform.GetComponent<AudioSource>().PlayOneShot(endSound, 1);
 			Application.LoadLevel ("Menu");
+		}else{
+			this.transform.GetComponent<AudioSource>().PlayOneShot(bounceSound, 0.4f);
 		}
 	}
 
@@ -54,6 +60,7 @@ public class BallController : MonoBehaviour {
 	}
 
 	public void hit(){
+		this.transform.GetComponent<AudioSource>().PlayOneShot(splashSound, 1);
 		this.transform.GetComponent<CircleCollider2D>().enabled = false;
 		this.transform.GetComponent<Rigidbody2D>().isKinematic = true;
 		this.transform.GetComponent<SpriteRenderer>().enabled = false;

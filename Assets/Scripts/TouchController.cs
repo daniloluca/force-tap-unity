@@ -4,7 +4,7 @@ using System.Collections;
 public class TouchController : MonoBehaviour {
 
 	public GameObject ball;
-	public float forceTap = 10f;
+	public float forceTap = 100f;
 	private Vector2 touchPosition;
 
 	void OnMouseDown(){

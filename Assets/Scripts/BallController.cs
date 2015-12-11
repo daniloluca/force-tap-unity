@@ -38,7 +38,7 @@ public class BallController : MonoBehaviour {
 			hit();
 		}else if(collider.gameObject.tag == "End"){
 			this.transform.GetComponent<AudioSource>().PlayOneShot(endSound, 1);
-			Application.LoadLevel ("Menu");
+			Application.LoadLevel ("Levels");
 		}else{
 			this.transform.GetComponent<AudioSource>().PlayOneShot(bounceSound, 0.4f);
 		}

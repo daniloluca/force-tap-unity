@@ -15,6 +15,7 @@ public class BallController : MonoBehaviour {
 	public AudioClip splashSound;
 	public AudioClip bounceSound;
 	public AudioClip endSound;
+	private GameObject audioSource;
 
 	void OnCollisionEnter2D(Collision2D collider){
 		if(collider.gameObject.tag == "Block"){
@@ -37,10 +38,10 @@ public class BallController : MonoBehaviour {
 			instance.transform.parent = collider.gameObject.transform;
 			hit();
 		}else if(collider.gameObject.tag == "End"){
-			this.transform.GetComponent<AudioSource>().PlayOneShot(endSound, 1);
+			audioSource.GetComponent<AudioSource>().PlayOneShot(endSound, 1);
 			Application.LoadLevel ("Levels");
 		}else{
-			this.transform.GetComponent<AudioSource>().PlayOneShot(bounceSound, 0.4f);
+			audioSource.GetComponent<AudioSource>().PlayOneShot(bounceSound, 0.4f);
 		}
 	}
 
@@ -50,6 +51,8 @@ public class BallController : MonoBehaviour {
 		colorList[1] = new Vector4(1, 0, 0, 1);
 		colorList[2] = new Vector4(0, 1, 0, 1);
 		this.transform.GetComponent<SpriteRenderer>().color = colorList[colorIndex];
+
+		audioSource = GameObject.Find("AudioEffects");
 	}
 	
 	// Update is called once per frame
@@ -60,7 +63,8 @@ public class BallController : MonoBehaviour {
 	}
 
 	public void hit(){
-		this.transform.GetComponent<AudioSource>().PlayOneShot(splashSound, 1);
+		audioSource.GetComponent<AudioSource>().PlayOneShot(splashSound, 1);
+
 		this.transform.GetComponent<CircleCollider2D>().enabled = false;
 		this.transform.GetComponent<Rigidbody2D>().isKinematic = true;
 		this.transform.GetComponent<SpriteRenderer>().enabled = false;

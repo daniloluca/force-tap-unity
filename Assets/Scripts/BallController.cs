@@ -19,6 +19,10 @@ public class BallController : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D collider){
 		if(collider.gameObject.tag == "Block"){
+			if(audioSource != null){
+				audioSource.GetComponent<AudioSource>().PlayOneShot(splashSound, 1);
+			}
+
 			collision.GetComponent<ParticleSystem>().startColor = this.transform.GetComponent<SpriteRenderer>().color;
 			Instantiate(collision, this.transform.position, collision.transform.rotation);
 			rand = Random.Range(0,paints.Length-1);		
@@ -38,10 +42,14 @@ public class BallController : MonoBehaviour {
 			instance.transform.parent = collider.gameObject.transform;
 			hit();
 		}else if(collider.gameObject.tag == "End"){
-			audioSource.GetComponent<AudioSource>().PlayOneShot(endSound, 1);
+			if(audioSource != null){
+				audioSource.GetComponent<AudioSource>().PlayOneShot(endSound, 1);
+			}
 			Application.LoadLevel ("Levels");
 		}else{
-			audioSource.GetComponent<AudioSource>().PlayOneShot(bounceSound, 0.4f);
+			if(audioSource != null){
+				audioSource.GetComponent<AudioSource>().PlayOneShot(bounceSound, 0.4f);
+			}
 		}
 	}
 
@@ -63,8 +71,6 @@ public class BallController : MonoBehaviour {
 	}
 
 	public void hit(){
-		audioSource.GetComponent<AudioSource>().PlayOneShot(splashSound, 1);
-
 		this.transform.GetComponent<CircleCollider2D>().enabled = false;
 		this.transform.GetComponent<Rigidbody2D>().isKinematic = true;
 		this.transform.GetComponent<SpriteRenderer>().enabled = false;
@@ -82,7 +88,7 @@ public class BallController : MonoBehaviour {
 		}
 		this.transform.GetComponent<SpriteRenderer>().color = colorList[colorIndex];
 
-		this.transform.position = new Vector2(0.509f, 0.88f);
+		this.transform.position = new Vector2(0, 0);
 		this.transform.GetComponent<SpriteRenderer>().enabled = true;
 		this.transform.GetComponent<Rigidbody2D>().isKinematic = false;
 		this.transform.GetComponent<CircleCollider2D>().enabled = true;

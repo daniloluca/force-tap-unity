@@ -3,11 +3,13 @@ using System.Collections;
 
 public class PauseController : MonoBehaviour {
 
+	public GameObject modal;
+
 	public void pause(){
-		//Time.timeScale = 0;
+		modal.SetActive(true);
 	}
 
 	public void unPause(){
-		//Time.timeScale = 1;
+		modal.SetActive(false);
 	}
 }

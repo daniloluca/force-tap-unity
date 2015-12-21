@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class SceneSelect : MonoBehaviour {
 
@@ -14,22 +15,22 @@ public class SceneSelect : MonoBehaviour {
 	}
 
 	public void Menu(){
-		Application.LoadLevel("Menu");
-	}
+        SceneManager.LoadScene("Menu");
+    }
 
 	public void Levels(){
-		Application.LoadLevel("Levels");
-	}
+        SceneManager.LoadScene("Levels");
+    }
 
 	public void Level1(){
-		Application.LoadLevel("Level 1");
-	}
+        SceneManager.LoadScene("Level 1");
+    }
 
 	public void Level2(){
-		Application.LoadLevel("Level 2");
-	}
+        SceneManager.LoadScene("Level 2");
+    }
 
 	public void Level3(){
-		Application.LoadLevel("Level 3");
-	}
+        SceneManager.LoadScene("Level 3");
+    }
 }

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class BallController : MonoBehaviour {
 
@@ -45,8 +46,10 @@ public class BallController : MonoBehaviour {
 			if(audioSource != null){
 				audioSource.GetComponent<AudioSource>().PlayOneShot(endSound, 1);
 			}
-			Application.LoadLevel ("Levels");
-		}else{
+            SceneManager.LoadScene("Levels");
+
+        }
+        else{
 			if(audioSource != null){
 				audioSource.GetComponent<AudioSource>().PlayOneShot(bounceSound, 0.4f);
 			}

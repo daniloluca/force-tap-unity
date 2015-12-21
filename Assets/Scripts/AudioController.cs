@@ -3,22 +3,17 @@ using System.Collections;
 
 public class AudioController : MonoBehaviour {
 
-	private bool destroy = true;
-
-	void OnLevelWasLoaded(){
-		if(destroy){
-			DestroyObject(this.gameObject);
-		}
-	}
-
-	// Use this for initialization
 	void Start () {
-		DontDestroyOnLoad(this.gameObject);
-		destroy = false;
+        GameObject music = GameObject.Find("Music");
+        GameObject audio = GameObject.Find("AudioEffects");
+        if (music == this.gameObject || audio == this.gameObject) {
+            DontDestroyOnLoad(this.gameObject);
+        } else {
+            DestroyObject(this.gameObject);
+        }
 	}
 	
-	// Update is called once per frame
 	void Update () {
-	
+        
 	}
 }

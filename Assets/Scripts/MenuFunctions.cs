@@ -69,7 +69,7 @@ public class MenuFunctions : MonoBehaviour {
 	}
 
 	public void musicControl(){
-		GameObject music;
+        GameObject music;
 		music = GameObject.Find("Music");
 		music.GetComponent<AudioSource>().mute = !music.GetComponent<AudioSource>().mute;
 		

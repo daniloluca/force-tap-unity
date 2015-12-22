@@ -10081,7 +10081,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trail: {fileID: 162840, guid: 95e1ef3db185642df9718dec8f624292, type: 2}
-  speed: 0.05
+  speed: 0.06
 --- !u!1 &1846050297
 GameObject:
   m_ObjectHideFlags: 0

@@ -33,4 +33,16 @@ public class SceneSelect : MonoBehaviour {
 	public void Level3(){
         SceneManager.LoadScene("Level 3");
     }
+
+    public void Level4() {
+        SceneManager.LoadScene("Level 4");
+    }
+
+    public void Level5() {
+        SceneManager.LoadScene("Level 5");
+    }
+
+    public void Level6() {
+        SceneManager.LoadScene("Level 6");
+    }
 }

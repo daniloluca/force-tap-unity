@@ -7,9 +7,11 @@ public class PauseController : MonoBehaviour {
 
 	public void pause(){
 		modal.SetActive(true);
+        Time.timeScale = 0;
 	}
 
 	public void unPause(){
 		modal.SetActive(false);
-	}
+        Time.timeScale = 1;
+    }
 }

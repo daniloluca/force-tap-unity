@@ -960,7 +960,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exitInControl: {fileID: 1023571993}
   exitOutControl: {fileID: 1965154946}
-  smooth: 0.3
+  smooth: 10
 --- !u!224 &497925845
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2096,7 +2096,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   continueInControl: {fileID: 590291130}
   continueOutControl: {fileID: 1049887999}
-  smooth: 0.3
+  smooth: 10
 --- !u!224 &987503817
 RectTransform:
   m_ObjectHideFlags: 0

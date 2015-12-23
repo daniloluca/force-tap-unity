@@ -209,7 +209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   continueInControl: {fileID: 1075024210}
   continueOutControl: {fileID: 503411694}
-  smooth: 0.3
+  smooth: 10
 --- !u!114 &33852206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4230,7 +4230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exitInControl: {fileID: 1691888419}
   exitOutControl: {fileID: 804968230}
-  smooth: 0.3
+  smooth: 10
 --- !u!114 &1447503921
 MonoBehaviour:
   m_ObjectHideFlags: 0

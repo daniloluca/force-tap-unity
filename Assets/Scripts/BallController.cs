@@ -31,17 +31,13 @@ public class BallController : MonoBehaviour {
 
             collision.GetComponent<ParticleSystem>().startColor = this.transform.GetComponent<SpriteRenderer>().color;
             Instantiate(collision, this.transform.position, collision.transform.rotation);
+
             rand = Random.Range(0, paints.Length - 1);
 
-            paint = Sprite.Create(paints[rand].texture, new Rect(paints[rand].rect.x,
-                                                                 paints[rand].rect.y,
-                                                                 paints[rand].rect.width,
-                                                                 paints[rand].rect.height),
-                                                                 new Vector2(0.5f, 0.75f),
-                                                                 100);
+            paint = Sprite.Create(paints[rand].texture, new Rect(paints[rand].rect.x, paints[rand].rect.y, paints[rand].rect.width, paints[rand].rect.height), new Vector2(0.5f, 0.5f), 100);
 
             splash.GetComponent<SpriteRenderer>().color = this.transform.GetComponent<SpriteRenderer>().color;
-            splash.transform.position = new Vector2(this.transform.position.x, collider.transform.position.y);
+            splash.transform.position = collider.contacts[0].point;
 
             splash.GetComponent<SpriteRenderer>().sprite = paint;
             instance = (GameObject)Instantiate(splash);

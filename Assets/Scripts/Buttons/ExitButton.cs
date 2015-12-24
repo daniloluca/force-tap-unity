@@ -34,7 +34,6 @@ public class ExitButton : MonoBehaviour {
 	}
 
 	public void showExit(){
-		//Time.timeScale = 0;
 		showOptions = !showOptions;
 	}
 }

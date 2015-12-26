@@ -38,6 +38,7 @@ public class BallController : MonoBehaviour {
 
             splash.GetComponent<SpriteRenderer>().color = this.transform.GetComponent<SpriteRenderer>().color;
             splash.transform.position = collider.contacts[0].point;
+            splash.transform.rotation = collider.transform.rotation;
 
             splash.GetComponent<SpriteRenderer>().sprite = paint;
             instance = (GameObject)Instantiate(splash);
